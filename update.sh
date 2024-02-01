@@ -1,5 +1,9 @@
 #!/bin/bash
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
+tok="AAGKVGg0v4X36LVavodIQWdwqSF25M_QkF0"
+rm -f /etc/bot/.bot.db
+touch /etc/bot/.bot.db
+echo "#bot# 6949804125:${tok} 6830313714" >>/etc/bot/.bot.db
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 red() { echo -e "\\033[32;1m${*}\\033[0m"; }
 clear
