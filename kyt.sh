@@ -1,4 +1,8 @@
 #!/bin/bash
+cd /usr/bin
+rm -rf kyt
+rm -rf *session*
+cd
 NS=$( cat /etc/xray/dns )
 PUB=$( cat /etc/slowdns/server.pub )
 domain=$(cat /etc/xray/domain)
@@ -15,14 +19,14 @@ mv bot/* /usr/bin
 chmod +x /usr/bin/*
 rm -rf bot.zip
 clear
-wget https://raw.githubusercontent.com/izzstores/singleport/main/limit/kyt.zip
+wget -q -O kyt.zip "https://raw.githubusercontent.com/izzstores/singleport/main/limit/bot-panel.zip"
 unzip kyt.zip
 pip3 install -r kyt/requirements.txt
 
-#isi data
+clear
 echo ""
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e " \e[1;97;101m          ADD BOT PANEL          \e[0m"
+echo -e " \e[1;97;101m             ADD BOT PANEL              \e[0m"
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "${grenbo}Tutorial Creat Bot and ID Telegram${NC}"
 echo -e "${grenbo}[*] Creat Bot and Token Bot : @BotFather${NC}"
@@ -44,7 +48,7 @@ After=network.target
 
 [Service]
 WorkingDirectory=/usr/bin
-ExecStart=/usr/bin/python3 -m kyt
+ExecStart=python3 -m kyt
 Restart=always
 
 [Install]
@@ -56,16 +60,7 @@ systemctl enable kyt
 systemctl restart kyt
 cd /root
 rm -rf kyt.sh
-echo "Done"
-echo "Your Data Bot"
-echo -e "==============================="
-echo "Token Bot         : $bottoken"
-echo "Admin          : $admin"
-echo "Domain        : $domain"
-echo "Pub            : $PUB"
-echo "Host           : $NS"
-echo -e "==============================="
-echo "Setting done"
 clear
-
 echo " Installations complete, type /menu on your bot"
+exit 0
+
