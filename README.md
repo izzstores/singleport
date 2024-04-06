@@ -1,6 +1,6 @@
 ### IZZ STORE AUTOSCRIPT
 
-CONTACT FOR ORDERS : https://t.me/IZZCOY
+CONTACT FOR ORDERS : https://wa.me/6282213283021
 
 ### UPDATE TERLEBIH DAHULU
 <pre><code>apt update && apt upgrade -y</code></pre>
